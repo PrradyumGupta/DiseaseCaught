@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Home - DiseaseCaught{% endblock %}
+
+{% block content %}
+<div class="text-center mt-20 max-w-3xl mx-auto bg-white bg-opacity-80 backdrop-blur-md rounded-3xl shadow-xl p-10 border border-indigo-300">
+    <h2 class="text-5xl font-extrabold mb-6 text-indigo-700 drop-shadow-md">Welcome to DiseaseCaught</h2>
+    <p class="mb-10 text-xl text-gray-700 max-w-xl mx-auto">Predict your health conditions early using AI-powered symptom analysis for better health outcomes.</p>
+    <a href="/predict"
+        class="inline-block bg-gradient-to-r from-purple-600 to-pink-600 hover:from-pink-600 hover:to-purple-600 text-white font-bold py-4 px-8 rounded-full shadow-lg transition transform hover:scale-105 hover:shadow-2xl">
+        Get Started
+    </a>
+</div>
+{% endblock %}

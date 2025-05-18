@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Predict Disease - DiseaseCaught{% endblock %}
+
+{% block content %}
+<h2 class="text-4xl font-extrabold mb-8 text-center text-indigo-700 drop-shadow-lg select-none">Disease Prediction</h2>
+
+<form method="POST" class="max-w-4xl mx-auto bg-white bg-opacity-90 backdrop-blur-sm rounded-3xl shadow-xl p-8 grid grid-cols-1 sm:grid-cols-2 gap-6 border border-indigo-300">
+
+    {% for symptom in symptom_list %}
+    <div class="flex items-center space-x-3 cursor-pointer group">
+        <input
+            type="checkbox"
+            id="{{ symptom }}"
+            name="{{ symptom }}"
+            class="h-6 w-6 rounded border-indigo-500 text-purple-600 focus:ring-purple-500 transition duration-300 group-hover:ring-2"
+        />
+        <label for="{{ symptom }}" class="capitalize text-gray-800 font-semibold select-none group-hover:text-purple-700 transition duration-300">
+            {{ symptom.replace('_', ' ') }}
+        </label>
+    </div>
+    {% endfor %}
+
+    <div class="sm:col-span-2 text-center mt-6">
+        <button
+            type="submit"
+            class="bg-gradient-to-r from-pink-600 to-purple-600 hover:from-purple-600 hover:to-pink-600 text-white font-extrabold py-4 px-10 rounded-full shadow-2xl transform transition duration-300 hover:scale-105 select-none"
+        >
+            Predict
+        </button>
+    </div>
+</form>
+
+{% if prediction %}
+<div
+    class="max-w-3xl mx-auto mt-10 p-6 bg-gradient-to-r from-green-300 to-green-500 text-white font-extrabold rounded-3xl shadow-lg text-center text-2xl select-none"
+>
+    Predicted Disease: <span class="capitalize">{{ prediction.replace('_', ' ') }}</span>
+</div>
+{% endif %}
+{% endblock %}

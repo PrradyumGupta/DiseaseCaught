@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Contact | DiseaseCaught{% endblock %}
+{% block content %}
+
+<section class="py-16">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-3xl font-extrabold text-indigo-800 mb-6 tracking-tight">Contact Us</h2>
+
+    <form class="grid grid-cols-1 gap-6">
+      <input type="text" placeholder="Your Name" class="border border-gray-300 p-3 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+      <input type="email" placeholder="Your Email" class="border border-gray-300 p-3 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+      <textarea rows="5" placeholder="Your Message" class="border border-gray-300 p-3 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+
+      <!-- Advanced Send Button -->
+      <button type="submit"
+        class="flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-purple-600 hover:to-pink-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M4 4l16 8-16 8V4z" />
+        </svg>
+        Send Message
+      </button>
+    </form>
+  </div>
+</section>
+
+{% endblock %}
